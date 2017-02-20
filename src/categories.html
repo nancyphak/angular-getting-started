@@ -1,36 +1,37 @@
-<div>
+<div class="x_panel">
+    <div class="x_title">
+        <h2>List Category</h2>
+        <div class="clearfix"></div>
+    </div>
     <div class="x_content">
 
         <table class="table">
             <thead>
-                <tr (click)="onRowClick(1)">
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Photo</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                <tr *ngFor="let category of categories">
+                    <th scope="row">{{category.id}}</th>
+                    <td TextBold [fontWeight]="'bold'" [fontDefault]="100">{{category.name}}</td>
+                    <td><img class="img-responsive" style="max-width:50px; max-height:50px;" src="/src/resources/images/{{category.photo}}"
+                        /></td>
+                    <td TextBold [fontDefault]="'800'">{{category.description}}</td>
+                    <td TextBold [TextBold]="'900'">{{category.type}}</td>
+                    <td>
+                        <a (click)="onEditClicked(category.id)" title="Edit Category">Edit</a>
+                        <a (click)="onSummaryClicked(category)" title="Summary Category">Summary</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
-
     </div>
+    <category-summary (onCategoryNameChanged)="onCategoryNameChanged($event)" *ngIf="categorySelected" [name]=categorySelected.name></category-summary>
+    <div *ngIf="name">category name change:{{name}}</div>
 </div>

@@ -18,11 +18,11 @@
     "angular2"
   ],
   "author": {
-    "name": "TU Tran",
-    "email": "contact@tranthanhtu.vn",
-    "url": "tranthanhtu.vn"
+    "name": "Nhan Phan",
+    "email": "nancyphak@gmail.com",
+    "url": ""
   },
-  "homepage": "tranthanhtu.vn",
+  "homepage": "",
   "license": "ISC",
   "devDependencies": {
     "@angular/common": "^2.4.1",

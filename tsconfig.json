@@ -15,7 +15,7 @@
     "typings/main",
     "typings/main.d.ts",
     "app/extension.d.ts",
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "src/resources/themes/gentelella/*.spec.ts",
+    "src/resources/themes/gentelella/*.d.ts"
   ]
 }

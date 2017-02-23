@@ -1,0 +1,36 @@
+<div class="categories">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Categories></h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let category of categories">
+                        <td TextColor [textDefault]="'red'">{{category.id}}</td>
+                        <td TextColor [textBlue]="'blue'">{{category.name}}</td>
+                        <td TextColor [TextColor]="'yellow'">{{category.description}}</td>
+                        <td>{{category.type}}</td>
+                        <td>
+                            <a (click)="onEditClicked(category.id)" title="">Edit</a>
+                            <a (click)="onSummaryClicked(category)" title="">Summary</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <summary-category *ngIf="selectedCategory" [name]="selectedCategory.name" (onNameChanged)="onNameChanged($event)"></summary-category>
+    <div *ngIf="selectedCategory">This is name changed {{selectedCategory.name}}</div>
+</div>

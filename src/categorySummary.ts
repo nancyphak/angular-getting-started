@@ -5,11 +5,8 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class CategorySummary {
     @Input() name: string = "";
-    @Input() description: string = "";
-    @Output() onNameValueChanged: EventEmitter<string> = new EventEmitter<string>();
-    @Output() descriptionChange: EventEmitter<string> = new EventEmitter<string>();
-    public onButtonClicked() {
-        this.onNameValueChanged.emit(this.name);
-        this.descriptionChange.emit(this.description);
+    @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
+    public onNameChanged(name: string) {
+        this.nameChange.emit(name);
     }
 }

@@ -9,9 +9,10 @@ import { EditCategory } from "./editCategory";
 import { CategoryService } from "./categoryService";
 import { CategorySummary } from "./categorySummary";
 import { BackgroundColor } from "./backgroundColor";
+import { FormInput } from "./formInput";
 @NgModule({
     imports: [BrowserModule, FormsModule, SercurityRoute],
-    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor],
+    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor, FormInput],
     bootstrap: [DefaultPage],
     providers: [CategoryService]
 })

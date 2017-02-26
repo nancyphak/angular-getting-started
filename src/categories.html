@@ -44,10 +44,8 @@
             </table>
         </div>
     </div>
-    <category-summary *ngIf="selectedCategory" [name]="selectedCategory.name" [(description)]="selectedCategory.description"
-        (onNameValueChanged)="onNameValuedChanged($event)"
-        ></category-summary>
-        <div class="x_panel" *ngIf="selectedCategory">
-            <p>this is name value changed: {{selectedCategory.name}}</p>
-        </div>
+    <category-summary *ngIf="selectedCategory" [(name)]="selectedCategory.name"></category-summary>
+    <div class="x_panel" *ngIf="selectedCategory">
+        <p>this is name value changed: {{selectedCategory.name}}</p>
+    </div>
 </div>

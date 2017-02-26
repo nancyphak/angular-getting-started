@@ -3,34 +3,33 @@
 
         <table class="table">
             <thead>
-                <tr (click)="onRowClick(1)">
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                <tr *ngFor="let category of categories">
+                    <td TextColor [textDefault]="'blue'">{{category.id}}</td>
+                    <td TextColor [textRed]="'red'">{{category.name}}</td>
+                    <td TextColor [TextColor]="'violet'">{{category.description}}</td>
+                    <td>{{category.type}}</td>
+                    <td><img style="max-width:50px" src="/src/resources/images/{{category.photo}}" /></td>
+                    <td>
+                        <a (click)="onEditClicked(category.id)">Edit</a>
+                        <a (click)="onSummaryClicked(category)">Category Summary</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
     </div>
+</div>
+<summary-category [name]="selectedCategory.name" (onNameValueChanged)="onNameValueChanged($event)" *ngIf="selectedCategory"></summary-category>
+<div class="x-panel" *ngIf="selectedCategory">
+    <p>This is name value changed: {{selectedCategory.name}}</p>
 </div>

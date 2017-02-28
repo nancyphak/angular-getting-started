@@ -12,7 +12,9 @@ export class Categories {
     public name: string = null;
     constructor(router: Router, categoryService: CategoryService) {
         this.router = router;
-        this.categories = categoryService.getCategories();
+        let self = this;
+        categoryService.getCategories().then((data: Array<any>) => { self.categories = data })
+            .error((errors: any) => { console.log(errors); });
     }
 
     public onEditClicked(id: any) {

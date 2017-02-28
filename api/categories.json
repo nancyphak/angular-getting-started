@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "A",
+        "type": "Type A",
+        "description": "category A",
+        "photo": "photo.jpg"
+    }
+]

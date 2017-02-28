@@ -1,10 +1,9 @@
-<div class="x_panel">
-    <div class="x_title">
+<page>
+    <page-header>
         <h2>List Category</h2>
         <div class="clearfix"></div>
-    </div>
-    <div class="x_content">
-
+    </page-header>
+    <page-content>
         <table class="table">
             <thead>
                 <tr>
@@ -31,7 +30,7 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-    <category-summary (onCategoryNameChanged)="onCategoryNameChanged($event)" *ngIf="categorySelected" [name]=categorySelected.name></category-summary>
-    <div *ngIf="name">category name change:{{name}}</div>
-</div>
+        <category-summary (onCategoryNameChanged)="onCategoryNameChanged($event)" *ngIf="categorySelected" [name]=categorySelected.name></category-summary>
+        <div *ngIf="name">category name change:{{name}}</div>
+    </page-content>
+</page>

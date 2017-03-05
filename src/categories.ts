@@ -11,7 +11,10 @@ export class Categories {
     public selectedCategory: any = null;
     constructor(router: Router, categoryService: CategoryService) {
         this.router = router;
-        this.categories = categoryService.getCategories();
+        let self = this;
+        categoryService.getCategories().then((categories: Array<any>) => { self.categories = categories }).error((error: any) => {
+            console.log(error);
+        });
     }
     public onEditClicked(id: any) {
         this.router.navigate([routerConfig.editCategory.path, id]);

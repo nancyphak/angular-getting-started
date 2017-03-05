@@ -16,25 +16,8 @@ export class CategoryService {
     constructor(iconnector: HttpConnector) {
         this.iconnector = iconnector;
     }
-    // public getCategories(): Promise {
-    //     let def = new Promise();
-    //     // def.reslove([{
-    //     //     "id": 1,
-    //     //     "name": "A",
-    //     //     "type": "type A",
-    //     //     "description": "description A",
-    //     //     "photo": "photo.jpg"
-    //     // }]);
-    //     // def.reject("error get list category");
-    //     this.http.get('ddd/api/categories.json').map(this.handleData).subscribe((data: any) => { def.reslove(data) }, (error: any) => {
-    //         def.reject(error);
-    //     });
-    //     return def;
-    // }
     public getCategories(): Promise {
         return this.iconnector.get("api/categories.json");
     }
-    protected handleData(response: Response) {
-        return response.json();
-    }
+    
 }

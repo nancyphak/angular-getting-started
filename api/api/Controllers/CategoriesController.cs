@@ -21,5 +21,12 @@
         {
             return _categoryService.GetCategories();
         }
+
+        [Route("")]
+        [HttpPost]
+        public Category CreateCategory(Category category)
+        {
+            return _categoryService.CreateCategory(category);
+        }
     }
 }

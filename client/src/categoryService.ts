@@ -13,7 +13,10 @@ export class CategoryService {
         this.iconnector = iconnector;
     }
     public getCategories(): Promise {
-        return this.iconnector.get("api/categories");
+        return this.iconnector.get("categories");
     }
-    
+
+    public createCategory(data:any): Promise {
+        return this.iconnector.post("categories", data);
+    }
 }

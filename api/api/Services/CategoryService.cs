@@ -17,5 +17,13 @@
         {
             return this._categoryRepository.GetCategories();
         }
+
+
+
+
+        public Category CreateCategory(Category category)
+        {
+            return this._categoryRepository.CreateCategory(category);
+        }
     }
 }

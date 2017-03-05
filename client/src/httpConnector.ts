@@ -19,6 +19,15 @@ export class HttpConnector implements IConnector {
             (error: any) => def.reject(error))
         return def;
     }
+    public post(url: string, data: any): Promise {
+        let def = PromiseFactory.create();
+        let route = appConfig.rootApiUrl + url;
+        this.http.post(route, data).map(this.handlePromise).subscribe(
+            (data: any) => def.reslove(data),
+            (error: any) => def.reject(error)
+        )
+        return def;
+    }
     private handlePromise(response: Response) {
         return response.json();
     }

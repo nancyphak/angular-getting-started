@@ -6,5 +6,7 @@
     interface ICategoriesRepository
     {
         IList<Category> GetCategories();
+
+        Category CreateCategory(Category category);
     }
 }

@@ -3,6 +3,15 @@
         <h2>Create category</h2>
     </page-header>
     <page-content>
-        <div>This is creating category page</div>
+        <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+            <form-input [label]="'Name'" [(value)]="category.name"></form-input>
+            <form-input [label]="'Description'" [(value)]="category.description"></form-input>
+            <form-input [label]="'Type'" [(value)]="category.type"></form-input>
+            <form-input [label]="'photo'" [(value)]="category.photo"></form-input>
+            <!--<form-button [label]="'Create'" (onClicked)="onCreateClicked()"></form-button>-->
+            <form-buttons>
+                <button type="submit" class="btn btn-primary" (click)="onCreateClicked()">Create</button>
+            </form-buttons>
+        </form>
     </page-content>
 </page>

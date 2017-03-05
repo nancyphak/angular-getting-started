@@ -17,5 +17,13 @@
         {
             return _dbContext.Categories.ToList();
         }
+
+
+        public Category CreateCategory(Category category)
+        {
+            _dbContext.Categories.Add(category);
+            _dbContext.SaveChanges();
+            return category;
+        }
     }
 }

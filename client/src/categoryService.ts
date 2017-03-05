@@ -8,16 +8,12 @@ import { HttpConnector } from "./httpConnector";
 @Injectable()
 export class CategoryService {
     private categories: Array<any> = [];
-    // private http: Http = null;
-    // constructor(http: Http) {
-    //     this.http = http;
-    // }
     private iconnector: IConnector;
     constructor(iconnector: HttpConnector) {
         this.iconnector = iconnector;
     }
     public getCategories(): Promise {
-        return this.iconnector.get("api/categories.json");
+        return this.iconnector.get("api/categories");
     }
     
 }

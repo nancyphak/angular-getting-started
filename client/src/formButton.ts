@@ -5,6 +5,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class FormButton {
     @Input() label: any = null;
+    @Input() cls: any = "btn-default";
     @Output() onClicked: EventEmitter<any> = new EventEmitter();
     public onButtonClicked() {
         this.onClicked.emit();

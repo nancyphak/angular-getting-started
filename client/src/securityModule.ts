@@ -15,9 +15,12 @@ import { Page } from "./page";
 import { HttpConnector } from "./httpConnector";
 import { FormButton } from "./formButton";
 import { FormButtons } from "./formButtons";
+import { FormPrimaryButton } from "./formPrimaryButton";
+import { HorizonalForm } from "./horizonalForm"
 @NgModule({
     imports: [BrowserModule, FormsModule, SercurityRoute, HttpModule],
-    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor, FormInput, Page, FormButton, FormButtons],
+    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor,
+        FormInput, Page, FormButton, FormButtons, FormPrimaryButton, HorizonalForm],
     bootstrap: [DefaultPage],
     providers: [CategoryService, HttpConnector],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

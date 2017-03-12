@@ -13,9 +13,10 @@ import { BackgroundColor } from "./backgroundColor";
 import { FormInput } from "./formInput";
 import { Page } from "./page";
 import { HttpConnector } from "./httpConnector";
+import { FormButtons } from "./formButtons";
 @NgModule({
     imports: [BrowserModule, FormsModule, SercurityRoute, HttpModule],
-    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor, FormInput, Page],
+    declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor, FormInput, Page, FormButtons],
     bootstrap: [DefaultPage],
     providers: [CategoryService, HttpConnector],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

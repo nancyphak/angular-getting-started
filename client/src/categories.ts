@@ -9,10 +9,11 @@ import { BasePage } from "./basePage";
 export class Categories extends BasePage {
     public categories: Array<any> = [];
     public selectedCategory: any = null;
-    constructor(router: Router, categoryService: CategoryService) {
+    constructor(router: Router) {
         super(router);
         this.router = router;
         let self = this;
+        let categoryService = window.ioc.reslove("categoryService");
         categoryService.getCategories().then((categories: Array<any>) => { self.categories = categories }).error((error: any) => {
             console.log(error);
         });

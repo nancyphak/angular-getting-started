@@ -22,7 +22,6 @@ import { HorizonalForm } from "./horizonalForm"
     declarations: [DefaultPage, Categories, AddCategory, EditCategory, CategorySummary, BackgroundColor,
         FormInput, Page, FormButton, FormButtons, FormPrimaryButton, HorizonalForm],
     bootstrap: [DefaultPage],
-    providers: [CategoryService, HttpConnector],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class SecurityModule { }

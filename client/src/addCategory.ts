@@ -9,17 +9,16 @@ import { BasePage } from "./basePage";
 })
 export class AddCategory extends BasePage {
     public category: AddCategoryModel = new AddCategoryModel();
-    private categoryService: CategoryService = null;
-    constructor(categoryService: CategoryService, router: Router) {
+    constructor(router: Router) {
         super(router);
-        this.categoryService = categoryService;
     }
     protected onReady() {
         console.log("on ready");
     }
     public onCreateClicked() {
         let self = this;
-        this.categoryService.createCategory(this.category).then((data: any) => {
+        let categoryService = window.ioc.reslove("categoryService");
+        categoryService.createCategory(this.category).then((data: any) => {
             self.navigate(routerConfig.categories.path);
         }).error((error: any) => {
             console.log(error);

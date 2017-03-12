@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import routerConfig from "./routerConfig";
-import { CategoryService } from "./categoryService";
 import { BasePage } from "./basePage";
 @Component({
     templateUrl: "src/categories.html"
@@ -9,10 +8,11 @@ import { BasePage } from "./basePage";
 export class Categories extends BasePage {
     public categories: Array<any> = [];
     public selectedCategory: any = null;
-    constructor(router: Router, categoryService: CategoryService) {
+    constructor(router: Router) {
         super(router);
         this.router = router;
         let self = this;
+        let categoryService = window.ioc.reslove("categoryService");
         categoryService.getCategories().then((categories: Array<any>) => { self.categories = categories }).error((error: any) => {
             console.log(error);
         });

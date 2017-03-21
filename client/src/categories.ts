@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 import routerConfig from "./routerConfig";
 import { CategoryService } from "./categoryService";
 import { BasePage } from "./basePage";
+import { ICategoryService } from "./iCategoryService";
+import { IoCName } from "./enum";
 @Component({
     templateUrl: "src/categories.html"
 })
@@ -13,7 +15,7 @@ export class Categories extends BasePage {
         super(router);
         this.router = router;
         let self = this;
-        let categoryService = window.ioc.reslove("categoryService");
+        let categoryService: ICategoryService = window.ioc.reslove(IoCName.ICategoryService);
         categoryService.getCategories().then((categories: Array<any>) => { self.categories = categories }).error((error: any) => {
             console.log(error);
         });

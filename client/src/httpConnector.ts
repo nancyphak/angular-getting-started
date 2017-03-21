@@ -6,11 +6,12 @@ import "rxjs/add/operator/map";
 import { Observable } from "rxjs/observable";
 import appConfig from "./appConfig";
 // @Injectable()
-export class HttpConnector {
+export class HttpConnector implements IConnector {
     // private http: Http = null;
     // constructor(http: Http) {
     //     this.http = http;
     // }
+    constructor(){}
     public get(url: string): Promise {
         let def = PromiseFactory.create();
         let route = appConfig.rootApiUrl + url;

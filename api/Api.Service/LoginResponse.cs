@@ -1,6 +1,8 @@
-﻿namespace Api.Service
+﻿using Api.Common;
+
+namespace Api.Service
 {
-    public class LoginResponse
+    public class LoginResponse : IEntity
     {
         public LoginResponse(string name)
         {

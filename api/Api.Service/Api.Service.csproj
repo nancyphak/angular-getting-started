@@ -55,6 +55,10 @@
     <Compile Include="ICategoryService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Api.Common\Api.Common.csproj">
+      <Project>{4a8cdb0b-69c2-4921-9d72-f70cc921898a}</Project>
+      <Name>Api.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Api.Context\Api.Context.csproj">
       <Project>{3bc2f559-760f-4fc3-8748-f2faf2e01607}</Project>
       <Name>Api.Context</Name>

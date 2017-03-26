@@ -16,7 +16,7 @@ export class HttpConnector implements IConnector {
     public get(url: string): Promise {
         let def = PromiseFactory.create();
         let route = appConfig.rootApiUrl + url;
-        route = "http://localhost:3000/api/categories.json";
+        // route = "http://localhost:3000/api/categories.json";
 
         let http: Http = appHelper.injector.get(Http);
         http.get(route).map(this.handlePromise).subscribe(

@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { Categories } from "./categories";
-import { AddCategory } from "./addCategory";
-import { EditCategory } from "./editCategory";
+import { Categories } from "./category/categories";
+import { AddCategory } from "./category/addCategory";
+import { EditCategory } from "./category/editCategory";
 import routerConfig from "./routerConfig";
 let routes = [
     { path: "", redirectTo: routerConfig.categories.name, pathMatch: "full" },
@@ -14,4 +14,4 @@ let routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
-export class SercurityRoute { }
+export class InventoryRoute { }

@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { CategoryService } from "./categoryService";
-import routerConfig from "./routerConfig";
+import { CategoryService } from "../_share/services/categoryService";
+import routerConfig from "./../routerConfig";
 import { AddCategoryModel } from "./addCategoryModel";
-import { BasePage } from "./basePage";
-import { ICategoryService } from "./iCategoryService";
-import { IoCName } from "./enum";
+import { BasePage } from "../../../modules/common/index";
+import { ICategoryService } from "../_share/services/iCategoryService";
+import { IoCName } from "../../../modules/common/index";
 @Component({
-    templateUrl: "src/addCategory.html"
+    templateUrl: "src/modules/inventory/category/addCategory.html"
 })
 export class AddCategory extends BasePage {
     public category: AddCategoryModel = new AddCategoryModel();

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 @Component({
     selector: 'form-input',
-    templateUrl: "src/formInput.html"
+    templateUrl: "src/modules/common/components/formInput.html"
 })
 export class FormInput {
     @Input() label: string = "";

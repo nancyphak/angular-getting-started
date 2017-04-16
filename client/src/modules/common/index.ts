@@ -1,0 +1,12 @@
+export * from "./models/promise";
+export * from "./models/basePage";
+export * from "./ioc/enum";
+export * from "./connectors/iConnector";
+export * from "./connectors/httpConnector";
+import appHelper from "./helpers/appHelper";
+import IocHelper from "./ioc/iocHelper";
+import { HelperFacade } from "./models/helperFacade";
+let helperFacade = new HelperFacade();
+helperFacade.appHelper = appHelper;
+helperFacade.iocHelper = IocHelper;
+export default helperFacade;

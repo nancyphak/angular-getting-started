@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import routerConfig from "./routerConfig";
-import { CategoryService } from "./categoryService";
-import { BasePage } from "./basePage";
-import { ICategoryService } from "./iCategoryService";
-import { IoCName } from "./enum";
+import routerConfig from "./../routerConfig";
+import { CategoryService } from "../_share/services/categoryService";
+import { BasePage } from "../../../modules/common/index";
+import { ICategoryService } from "../_share/services/iCategoryService";
+import { IoCName } from "../../../modules/common/index";
 @Component({
-    templateUrl: "src/categories.html"
+    templateUrl: "src/modules/inventory/category/categories.html"
 })
 export class Categories extends BasePage {
     public categories: Array<any> = [];

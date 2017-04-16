@@ -1,10 +1,9 @@
 ///<reference path="extension.d.ts"/>
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { SecurityModule } from "./securityModule";
-import IocHelper from "./iocHelper";
-import appHelper from "./appHelper";
-IocHelper.configIoc().then(() => {
-    platformBrowserDynamic().bootstrapModule(SecurityModule).then((platform: any) => {
-        appHelper.setInjector(platform.injector);
-    });
+import { InventoryModule } from "./modules/inventory/inventoryModule";
+// import IocHelper from "./modules/common/index";
+import HelperFacade from "./modules/common/index";
+import appConfig from "./config/appConfig";
+HelperFacade.iocHelper.configIoc(appConfig).then(() => {
+    platformBrowserDynamic().bootstrapModule(InventoryModule);
 })

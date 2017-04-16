@@ -2,11 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Web.Http;
-    using System;
     using Context;
     using Service;
-    using Service.Impl;
     using Common;
+    using Common.IoC;
     [RoutePrefix("api/categories")]
     public class CategoriesController : ApiController
     {
@@ -14,7 +13,7 @@
 
         public CategoriesController()
         {
-            _categoryService = new CategoryService();
+            _categoryService = IoCContainer.Resolve<ICategoryService>();
         }
 
         [Route("")]
@@ -36,9 +35,9 @@
         [Route("")]
         [HttpPost]
         [ResponseWrapper]
-        public Category CreateCategory(Category category)
+        public void CreateCategory(Category category)
         {
-            return _categoryService.CreateCategory(category);
+            _categoryService.CreateCategory(category);
         }
     }
 }

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "avatar": "user.jpg",
+        "username": "teo_123",
+        "firstName": "Teo",
+        "lastName": "Pham"
+    },
+    {
+        "id": 2,
+        "avatar": "user.jpg",
+        "username": "hung_pham",
+        "firstName": "Hung",
+        "lastName": "Pham"
+    },
+    {
+        "id": 3,
+        "avatar": "user.jpg",
+        "username": "hung_pham",
+        "firstName": "Hung To",
+        "lastName": "Pham"
+    }
+]

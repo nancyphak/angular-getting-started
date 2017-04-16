@@ -1,19 +1,27 @@
-import { AfterViewInit } from "@angular/core";
+import { OnInit, AfterViewInit } from '@angular/core';
 import { Router } from "@angular/router";
-export class BasePage implements AfterViewInit {
-    public router: Router;
+
+export class BasePage implements OnInit, AfterViewInit {
+    protected router: Router;
+
     constructor(router: Router) {
         this.router = router;
     }
-    ngAfterViewInit() {
+
+    ngOnInit() { }
+
+    ngAfterViewInit(): void {
         this.onReady();
     }
-    protected onReady() {
+
+    protected onReady(): void {
 
     }
-    protected navigate(url: string, ...options: Array<any>) {
+
+    protected navigate(url: string, ...options: Array<any>): void {
         let params = options || [];
-        params.unshift(url)
+        params.unshift(url);
         this.router.navigate(params);
     }
+
 }

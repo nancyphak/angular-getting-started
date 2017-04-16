@@ -1,8 +1,8 @@
-export const IoCName = {
-    ICategoryService: "iCategoryService",
-    IConnector: "iConnector"
-};
-export enum IoCLifeCycle {
-    Singleton,
-    Transient
+export const IoCNames ={
+        IUserService :"iuserService",
+        Iconnector : "iconnector"
+}
+
+export enum IoCLifeCycle{
+        Singleton, Transient
 }

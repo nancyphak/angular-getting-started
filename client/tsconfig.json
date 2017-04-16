@@ -8,14 +8,19 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+    "paths": {
+        "@app/common" : ["src/modules/common/index"],
+        "@app/themes/default" :["src/themes/default/layout"]
+    }
   },
   "exclude": [
     "node_modules",
     "typings/main",
     "typings/main.d.ts",
     "app/extension.d.ts",
-    "src/resources/themes/gentelella/*.spec.ts",
-    "src/resources/themes/gentelella/*.d.ts"
+    "**/*.spec.ts",
+    "**/*.d.ts"
   ]
 }

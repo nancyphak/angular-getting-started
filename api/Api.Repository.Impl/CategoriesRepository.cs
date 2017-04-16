@@ -5,10 +5,10 @@
     using System.Linq;
     using Api.Context;
 
-    public class CategoriesRepository : ICategoriesRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly DbContext _dbContext;
-        public CategoriesRepository()
+        public CategoryRepository()
         {
             _dbContext = new DbContext();
         }

@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -298,6 +306,14 @@
     <ProjectReference Include="..\Api.Context\Api.Context.csproj">
       <Project>{3bc2f559-760f-4fc3-8748-f2faf2e01607}</Project>
       <Name>Api.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Api.Repository.Impl\Api.Repository.Impl.csproj">
+      <Project>{c00ecc84-83de-409e-9ac8-a2bb566ee810}</Project>
+      <Name>Api.Repository.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Api.Repository\Api.Repository.csproj">
+      <Project>{ed9afd90-89cf-47d1-b180-27330d873763}</Project>
+      <Name>Api.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Api.Service.Impl\Api.Service.Impl.csproj">
       <Project>{dd0077b6-a8b3-4468-9cba-ca4189064142}</Project>

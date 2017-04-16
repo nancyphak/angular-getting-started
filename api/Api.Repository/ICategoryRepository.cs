@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Context;
 
-    public interface ICategoriesRepository
+    public interface ICategoryRepository
     {
         IList<Category> GetCategories();
 

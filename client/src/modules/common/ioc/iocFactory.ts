@@ -1,50 +1,55 @@
 import { IoCLifeCycle } from "./enum";
-import { IObjectBuilder } from "./builder/iObjectBuilder";
 import { SingletonObjectBuilder } from "./builder/singletonObjectBuilder";
 import { TransientObjectBuilder } from "./builder/transientObjectBuilder";
-import appHelper from "../helpers/appHelper";
-export class IocFactory {
+import { IObjectBuilder } from "./builder/iObjectBuilder";
+import appHelper from "../helper/appHelper";
+export class IoCFactory {
     public static create(): IocContainer {
         return new IocContainer();
     }
 }
+
 export class IocContainer {
-    private registrations: any;
+    private registrations: Array<any>;
+
     constructor() {
         this.registrations = [];
     }
+
     public import(registrations: Array<any>) {
         this.registrations = registrations;
     }
-    public reslove(obj: any): any {
-        if (typeof obj === "function") {
-            return this.resloveAngularObject(obj);
+
+    public registers(registrations: Array<any>) {
+        let self = this;
+        if (!registrations || registrations.length <= 0) return;
+        registrations.forEach(item => {
+            self.registrations.push(item);
+        });
+    }
+
+    public resolve(obj: any): any {
+        if (typeof obj == "function") {
+            return this.resolveAngularObject(obj);
         }
-        let declaration = this.registrations.firstOrDefault((item: any) => { return item.name == obj });
+        let declaration = this.registrations.find((item) => {
+            return obj == item.name;
+        });
         let objectBuilder: IObjectBuilder = this.getObjectBuilder(declaration);
         return objectBuilder.build();
-        // if (declaration.lifeCycle == IoCLifeCycle.Singleton) {
-        //     let instanceFn = declaration.instanceFn ? declaration.instanceFn : new declaration.instance();
-        //     declaration.instanceFn = instanceFn;
-        //     return declaration.instanceFn;
-        // }
-        // if (declaration.lifeCycle == IoCLifeCycle.Transient) {
-        //     return new declaration.instance();
-        // }
-        // return null;
+    }
+    private resolveAngularObject(obj: any) {
+        return appHelper.injector.get(obj);
     }
     private getObjectBuilder(declaration: any): IObjectBuilder {
         switch (declaration.lifeCycle) {
             case IoCLifeCycle.Singleton:
                 return new SingletonObjectBuilder(declaration);
 
-            default:
             case IoCLifeCycle.Transient:
                 return new TransientObjectBuilder(declaration);
         }
     }
 
-    private resloveAngularObject(obj: any) {
-        return appHelper.injector.get(obj);
-    }
+
 }

@@ -1,19 +1,18 @@
 ﻿namespace Api.Service.Impl
 {
-    using System;
     using System.Collections.Generic;
     using Api.Context;
     using Api.Repository;
-    using Repository.Impl;
     using Common;
+    using Common.IoC;
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoriesRepository _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
 
         public CategoryService()
         {
-            this._categoryRepository = new CategoriesRepository();
+            this._categoryRepository = IoCContainer.Resolve<ICategoryRepository>();
         }
 
         public IList<Category> GetCategories()

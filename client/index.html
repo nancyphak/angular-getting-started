@@ -2,68 +2,47 @@
 <html>
 
 <head>
-  <base href="/">
-  <title>Angular2 sample</title>
-  <meta charset="utf-8" />
-  <!-- Bootstrap -->
-  <link href="src/resources/themes/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="src/resources/themes/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="src/resources/themes/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
-  <!-- iCheck -->
-  <link href="src/resources/themes/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <base href="/">
+    <title>Angular2 Getting Started</title>
+    <meta charset="utf-8" />
 
-  <!-- bootstrap-progressbar -->
-  <link href="src/resources/themes/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-  <!-- JQVMap -->
-  <link href="src/resources/themes/gentelella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
-  <!-- bootstrap-daterangepicker -->
-  <link href="src/resources/themes/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="src/themes/default/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="src/themes/default/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Custom Theme Style -->
-  <link href="src/resources/themes/gentelella/css/custom.min.css" rel="stylesheet">
-  <script src="node_modules/core-js/client/shim.min.js"></script>
-  <script src="node_modules/zone.js/dist/zone.js"></script>
-  <script src="node_modules/reflect-metadata/reflect.js"></script>
-  <script src="node_modules/systemjs/dist/system.src.js"></script>
-  <script>
-    window.autoBootstrap = false;
-  </script>
-  <script src="systemjs.config.js"></script>
+    <!-- Custom Theme Style -->
+    <link href="src/themes/default/css/custom.css" rel="stylesheet">
+
+
+
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script>
+        window.autoBootstrap = false;
+    </script>
+    <script src="systemjs.config.js"></script>
 
 </head>
 
-<body>
-  <default-page></default-page>
+<body class="nav-md">
 
-  <!-- jQuery -->
-  <script src="src/resources/themes/gentelella/vendors/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="src/resources/themes/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- FastClick -->
-  <script src="src/resources/themes/gentelella/vendors/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="src/resources/themes/gentelella/vendors/nprogress/nprogress.js"></script>
-  <!-- bootstrap-progressbar -->
-  <script src="src/resources/themes/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-  <!-- DateJS -->
-  <script src="src/resources/themes/gentelella/vendors/DateJS/build/date.js"></script>
-  <!-- JQVMap -->
-  <script src="src/resources/themes/gentelella/vendors/jqvmap/dist/jquery.vmap.js"></script>
-  <script src="src/resources/themes/gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="src/resources/themes/gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-  <!-- bootstrap-daterangepicker -->
-  <script src="src/resources/themes/gentelella/vendors/moment/min/moment.min.js"></script>
-  <script src="src/resources/themes/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <layout>Loading ...</layout>
 
-  <!-- Custom Theme Scripts -->
-  <script src="src/resources/themes/gentelella/js/custom.min.js"></script>
-  <script src="src/resources/jsextension.js"></script>
+    <script>
+        System.import("src/main").catch(function (error) { console.log(error); });
+    </script>
 
-  <script>
-    System.import("src/main").catch(function (error) { console.log(error); });
-  </script>
-</body>
+    <!-- jQuery -->
+    <script src="src/themes/default/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="src/themes/default/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="src/themes/default/js/custom.js"></script>
+
+    <body>
 
 </html>

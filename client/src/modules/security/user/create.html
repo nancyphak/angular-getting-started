@@ -1,0 +1,12 @@
+<page>
+    <page-title>Create User</page-title>
+    <page-content>
+        <form-horizontal>
+            <form-input label="Username" [(value)]="userModel.username"></form-input>
+            <form-input label="First Name" [(value)]="userModel.firstName"></form-input>
+            <form-input label="Last Name" [(value)]="userModel.lastName"></form-input>
+            <form-button label="Back" (click)="onCancelClicked()"></form-button>
+            <form-primary-button label="Create" (click)="onCreateClicked()"></form-primary-button>
+        </form-horizontal>
+    </page-content>
+</page> 

@@ -1,0 +1,12 @@
+<div class="x_panel">
+    <div class="x_title">
+        <h2>User Summary: {{firstName}}</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <br>
+        <form class="form-horizontal form-label-left">
+            <form-input label="First Name" (valueChange)="onChange($event)" [required]="true" [(value)]="firstName"></form-input>
+        </form>
+    </div>
+</div>
